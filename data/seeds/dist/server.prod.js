@@ -1,0 +1,1 @@
+"use strict";var express=require("express"),ProjectRouter=require("./projects/project-router.js"),server=express();server.use(express.json()),server.use("/api/projects",ProjectRouter),module.exports=server;

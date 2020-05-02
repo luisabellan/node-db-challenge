@@ -1,0 +1,1 @@
+"use strict";var server=require("./server.js"),PORT=process.env.PORT||5e3;server.listen(PORT,function(){console.log("Listening on port ".concat(PORT,"..."))});

@@ -67,5 +67,6 @@ module.exports = {
   add: add,
   remove: remove,
   findById: findById,
-  update: update
+  update: update,
+  findMoreInfoById: findMoreInfoById
 };

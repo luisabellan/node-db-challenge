@@ -2,7 +2,7 @@
 
 var express = require('express');
 
-var Projects = require('./project-model');
+var Projects = require('./resources-model');
 
 var router = express.Router();
 router.get('/', function (req, res) {
@@ -27,6 +27,23 @@ router.get('/:id', function (req, res) {
   })["catch"](function (err) {
     res.status(500).json({
       message: 'Failed to get projects'
+    });
+  });
+});
+router.get('/:id/moreinfo', function (req, res) {
+  var id = req.params.id;
+  Projects.findMoreInfoById(id).then(function (project) {
+    if (project.length) {
+      // console.log(project)
+      res.json(project);
+    } else {
+      res.status(404).json({
+        message: 'Could not find project for given project'
+      });
+    }
+  })["catch"](function (err) {
+    res.status(500).json({
+      message: 'Failed to get project'
     });
   });
 });

@@ -1,0 +1,1 @@
+"use strict";var express=require("express"),ProjectRouter=require("./projects/project-router.js"),MoreInfoRouter=require("./moreinfo/moreInfo-router.js"),server=express();server.use(express.json()),server.use("/api/projects",ProjectRouter),server.use("/api/projects",MoreInfoRouter),module.exports=server;

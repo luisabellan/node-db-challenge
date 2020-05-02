@@ -16,19 +16,19 @@ The Minimum Viable Product must be completed in three hours.
 
 Follow these steps to set up and work on your project:
 
-- [ ] Create a forked copy of this project.
-- [ ] Add your _Team Lead_ as collaborator on Github.
-- [ ] Clone your forked version of the Repository.
-- [ ] Create a new Branch on the clone: git checkout -b `firstName-lastName`.
-- [ ] Implement the project on this Branch, committing changes regularly.
-- [ ] Push commits: git push origin `firstName-lastName`.
+- [* ] Create a forked copy of this project.
+- [* ] Add your _Team Lead_ as collaborator on Github.
+- [* ] Clone your forked version of the Repository.
+- [* ] Create a new Branch on the clone: git checkout -b `firstName-lastName`.
+- [* ] Implement the project on this Branch, committing changes regularly.
+- [* ] Push commits: git push origin `firstName-lastName`.
 
 Follow these steps for completing your project.
 
-- [ ] Submit a Pull-Request to merge `firstName-lastName` Branch into master on **your fork, don't make Pull Requests against Lambda's repository**.
-- [ ] Please don't merge your own pull request.
-- [ ] Add your _Team Lead_ as a Reviewer on the Pull-request
-- [ ] Your _Team Lead_ will count the challenge as done by merging the branch into _master_.
+- [* ] Submit a Pull-Request to merge `firstName-lastName` Branch into master on **your fork, don't make Pull Requests against Lambda's repository**.
+- [* ] Please don't merge your own pull request.
+- [* ] Add your _Team Lead_ as a Reviewer on the Pull-request
+- [* ] Your _Team Lead_ will count the challenge as done by merging the branch into _master_.
 
 ## Commits
 
@@ -40,11 +40,18 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [ ] Explain the difference between `Relational Databases` and `SQL`.
 
+Relational Databases are those in which we storage the data in tables and SQL or Structure Query Language is the language we use to communicate with our tables in order to do any changes on them (create tables, columns and rows or to change the data in them (update), create, delete or read (CRUD operations) ).
+
 - [ ] Why do tables need a `primary key`?
+
+This way they can be referenced avoiding many pitfalls. A primary key is not nullable and unique by definition which comes in handy for later referencing with other tables and data and to assure persistance.
 
 - [ ] What is the name given to a table column that references the primary key on another table.
 
+A foreign key.
+
 - [ ] What do we need in order to have a _many to many_ relationship between two tables.
+An intermediary table that holds unique ids of both tables that we can use to connect them together
 
 ## Minimum Viable Product
 

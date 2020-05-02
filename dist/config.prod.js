@@ -1,0 +1,1 @@
+"use strict";var knex=require("knex"),config=require("../knexfile.js"),db=knex(config.development);module.exports=db;

@@ -12,6 +12,21 @@ function findById(id) {
   return db('project').where({
     'project_id': id
   }).first();
+} //stretch
+
+
+function findMoreInfoById(id) {
+  /*  SELECT p.project_id, p.name, p.description, p.completed, t.id, t.description, t.notes, t.completed, r.resource_id, r.name, r.description 
+   FROM project AS p
+   JOIN [resource] AS r
+   ON p.project_id = r.resource_id
+  JOIN [task] AS t
+  ON r.resource_id = t.id; */
+  //  const steps =  db('steps').where({id}) 
+  var project = db('project as p').join('project as p', 'p.project_id', 'r.resource_id').join('resource as r', 'r.resource_id', 't.id').select('p.project_id', 'p.name', 'p.description', 'p.completed', ' t.id', 't.description', 't.notes', 't.completed', 'r.resource_id', 'r.name', 'r.description');
+  return db(project).where({
+    'project_id': id
+  });
 } // Resolves to an array of all correctly ordered step for the given project: `[ { id: 17, project_name: 'Find the Holy Grail', step_number: 1, instructions: 'quest'}, { id: 18, project_name: 'Find the Holy Grail', step_number: 2, instructions: '...and quest'}, etc. ]`.
 
 

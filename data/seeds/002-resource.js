@@ -4,21 +4,18 @@ exports.seed = function(knex) {
   return knex('resource').truncate()
     .then(function () {
       // Inserts seed entries
-      return knex('project').insert([
+      return knex('resource').insert([
         {
-          name: 'Smurfs',
+          name: 'GitHub Pro Account',
           description: 'Fan Site for smurfs lovers',
-          completed: false
         },
         {
-          name: 'Blog for Good',
-          description: 'Virginia React site',
-          completed: false
+          name: 'A meeting room',
+          description: 'Room for meetings',
         },
         {
-          name: 'ChessNoobsters',
-          description: 'Learn to play chess with this awesome app',
-          completed: false
+          name: 'Computer',
+          description: 'Computer to make awesome projects',
         }
       ]);
     });

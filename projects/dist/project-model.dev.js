@@ -60,6 +60,34 @@ function update(changes, id) {
       }
     }
   });
+} //stretch
+
+
+function findMoreInfoById(id) {
+  var info;
+  return regeneratorRuntime.async(function findMoreInfoById$(_context3) {
+    while (1) {
+      switch (_context3.prev = _context3.next) {
+        case 0:
+          _context3.next = 2;
+          return regeneratorRuntime.awrap(db('info as i').join('project as p', 'i.id', 'p.project_id').join('resource as r', 'p.project_id', 'r.resource_id').join('task as t', 'r.resource_id', 't.id').select('i.id', 'i.name', 'i.description', 'i.completed', 'p.project_id', 'p.name', 'p.description', 'p.completed', ' t.id', 't.description', 't.notes', 't.completed', 'r.resource_id', 'r.name', 'r.description'));
+
+        case 2:
+          info = _context3.sent;
+          _context3.next = 5;
+          return regeneratorRuntime.awrap(db(info).where({
+            'i.id': id
+          }).first());
+
+        case 5:
+          return _context3.abrupt("return", _context3.sent);
+
+        case 6:
+        case "end":
+          return _context3.stop();
+      }
+    }
+  });
 }
 
 module.exports = {
@@ -67,5 +95,6 @@ module.exports = {
   add: add,
   remove: remove,
   findById: findById,
-  update: update
+  update: update,
+  findMoreInfoById: findMoreInfoById
 };

@@ -65,10 +65,27 @@ router.post('/:id/project', (req, res) => {
   });
 });
 
+router.get('/:id/moreinfo', (req, res) => {
+  const { id } = req.params;
+
+  Projects.findMoreInfoById(id)
+  .then(info => {
+    if (info) {
+      
+      res.json(project);
+    } else {
+      res.status(404).json({ message: 'Could not find project for given project' })
+    }
+  })
+  .catch(err => {
+    res.status(500).json({ message: 'Failed to get project' });
+  });
+});
+
 router.put('/:id', (req, res) => {
   const { id } = req.params;
   const changes = req.body;
-
+  
   Projects.findById(id)
   .then(project => {
     if (project) {
@@ -100,5 +117,8 @@ router.delete('/:id', (req, res) => {
     res.status(500).json({ message: 'Failed to delete project' });
   });
 });
+
+
+
 
 module.exports = router;

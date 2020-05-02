@@ -59,6 +59,22 @@ router.post('/:id/project', function (req, res) {
     });
   });
 });
+router.get('/:id/moreinfo', function (req, res) {
+  var id = req.params.id;
+  Projects.findMoreInfoById(id).then(function (info) {
+    if (info) {
+      res.json(project);
+    } else {
+      res.status(404).json({
+        message: 'Could not find project for given project'
+      });
+    }
+  })["catch"](function (err) {
+    res.status(500).json({
+      message: 'Failed to get project'
+    });
+  });
+});
 router.put('/:id', function (req, res) {
   var id = req.params.id;
   var changes = req.body;

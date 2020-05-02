@@ -1,0 +1,1 @@
+"use strict";exports.seed=function(e){return e("task").truncate().then(function(){return e("task").insert([{description:"Make skeleton for blog",notes:"Ask Virginia for tips",completed:!0},{description:"Buy a computer",notes:"",completed:!1},{description:"Set up a meeting with John Doe",notes:"Mr Doe likes donuts!",completed:!1}])})};

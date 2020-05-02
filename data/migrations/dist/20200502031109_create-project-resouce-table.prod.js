@@ -1,0 +1,1 @@
+"use strict";exports.up=function(e){return e.schema.createTable("project_resource",function(e){e.increments("project_id"),e.integer("resource_id").notNullable()})},exports.down=function(e){return e.schema.dropTableIfExists("project_resource")};

@@ -1,1 +1,1 @@
-"use strict";exports.up=function(e){return e.schema.createTable("resource",function(e){e.increments(),e.text("name",128).unique().notNullable(),e.text("description",128)})},exports.down=function(e){return e.schema.dropTableIfExists("resource")};
+"use strict";exports.up=function(e){return e.schema.createTable("resource",function(e){e.increments("resource_id"),e.text("name",128).unique().notNullable(),e.text("description",128)})},exports.down=function(e){return e.schema.dropTableIfExists("resource")};

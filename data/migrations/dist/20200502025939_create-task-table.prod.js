@@ -1,0 +1,1 @@
+"use strict";exports.up=function(e){return e.schema.createTable("task",function(e){e.increments(),e.text("description",128).unique().notNullable(),e.text("notes",128),e.boolean("completed",128).notNullable().defaultTo(!1)})},exports.down=function(e){return e.schema.dropTableIfExists("task")};

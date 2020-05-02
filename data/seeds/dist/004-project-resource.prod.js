@@ -1,0 +1,1 @@
+"use strict";exports.seed=function(e){return e("project_resource").truncate().then(function(){return e("project_resource").insert([{resource_id:2},{resource_id:1},{resource_id:3}])})};

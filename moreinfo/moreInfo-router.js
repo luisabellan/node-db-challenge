@@ -9,9 +9,8 @@ router.get('/:id/moreinfo', (req, res) => {
   const { id } = req.params;
 
   MoreInfo.findMoreInfoById(id)
-  .then(project => {
-    if (project.length) {
-     // console.log(project)
+  .then(info => {
+    if (info.length) {
       
       res.json(project);
     } else {

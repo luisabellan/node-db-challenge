@@ -7,9 +7,8 @@ var MoreInfo = require('./moreInfo-model.js');
 var router = express.Router();
 router.get('/:id/moreinfo', function (req, res) {
   var id = req.params.id;
-  MoreInfo.findMoreInfoById(id).then(function (project) {
-    if (project.length) {
-      // console.log(project)
+  MoreInfo.findMoreInfoById(id).then(function (info) {
+    if (info.length) {
       res.json(project);
     } else {
       res.status(404).json({

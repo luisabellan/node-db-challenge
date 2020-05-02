@@ -1,0 +1,1 @@
+"use strict";exports.seed=function(e){return e("info").truncate().then(function(){return e("info").insert([{name:"project name here",description:"task description",completed:!0},{name:"project name here",description:"task description",completed:!1},{name:"project name here",description:"task description",completed:!0}])})};

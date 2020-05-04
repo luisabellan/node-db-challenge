@@ -10,7 +10,7 @@ function find() {
 
 
 function findById(id) {
-    return db('resource').where({ 'resource_id' : id }).first();
+    return db('resource').where({ id }).first();
 }
  
 
@@ -26,7 +26,7 @@ async function add(resource) {
 
 
 function remove(id) {
-    return db('resource').where({ 'resource_id' : id }).first().del()
+    return db('resource').where({ id }).first().del()
 
 }
 
@@ -35,7 +35,7 @@ function remove(id) {
 async function update(changes,id) {
 
     
-      const resource =  await db("resource").where({ 'resource_id' : id }).update(changes);
+      const resource =  await db("resource").where({ id }).update(changes);
       return resource
       
 }

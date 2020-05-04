@@ -1,0 +1,1 @@
+"use strict";var cleaner=require("knex-cleaner");exports.seed=function(e){return cleaner.clean(e,{mode:"truncate",ignoreTables:["knex_migrations","knex_migrations_lock"]})};

@@ -10,7 +10,7 @@ function find() {
 
 function findById(id) {
   return db('resource').where({
-    'resource_id': id
+    id: id
   }).first();
 } // Resolves to an array of all correctly ordered step for the given resource: `[ { id: 17, resource_name: 'Find the Holy Grail', step_number: 1, instructions: 'quest'}, { id: 18, resource_name: 'Find the Holy Grail', step_number: 2, instructions: '...and quest'}, etc. ]`.
 
@@ -35,7 +35,7 @@ function add(resource) {
 
 function remove(id) {
   return db('resource').where({
-    'resource_id': id
+    id: id
   }).first().del();
 }
 
@@ -47,7 +47,7 @@ function update(changes, id) {
         case 0:
           _context2.next = 2;
           return regeneratorRuntime.awrap(db("resource").where({
-            'resource_id': id
+            id: id
           }).update(changes));
 
         case 2:

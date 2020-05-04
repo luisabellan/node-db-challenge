@@ -4,9 +4,9 @@ exports.up = function (knex) {
   // create task table
   return knex.schema.createTable('task', function (table) {
     table.increments();
-    table.text('description', 128).unique().notNullable();
-    table.text('notes', 128);
-    table["boolean"]('completed', 128).notNullable().defaultTo(false);
+    table.text('description').unique().notNullable();
+    table.text('notes');
+    table["boolean"]('completed').notNullable().defaultTo(false);
   });
 };
 

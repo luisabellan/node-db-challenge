@@ -4,13 +4,13 @@ exports.up = function(knex) {
   return knex.schema.createTable('task', table =>{
       table.increments();
       
-      table.text('description', 128)
+      table.text('description')
       .unique()
       .notNullable();
 
-      table.text('notes', 128);
+      table.text('notes');
 
-      table.boolean('completed', 128)
+      table.boolean('completed')
       .notNullable()
       .defaultTo(false);
 

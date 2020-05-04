@@ -10,7 +10,7 @@ function find() {
 
 function findById(id) {
   return db('project').where({
-    'project_id': id
+    id: id
   }).first();
 } // Resolves to an array of all correctly ordered step for the given project: `[ { id: 17, project_name: 'Find the Holy Grail', step_number: 1, instructions: 'quest'}, { id: 18, project_name: 'Find the Holy Grail', step_number: 2, instructions: '...and quest'}, etc. ]`.
 
@@ -35,7 +35,7 @@ function add(project) {
 
 function remove(id) {
   return db('project').where({
-    'project_id': id
+    id: id
   }).first().del();
 }
 
@@ -47,7 +47,7 @@ function update(changes, id) {
         case 0:
           _context2.next = 2;
           return regeneratorRuntime.awrap(db("project").where({
-            'project_id': id
+            id: id
           }).update(changes));
 
         case 2:
@@ -70,7 +70,7 @@ function findMoreInfoById(id) {
       switch (_context3.prev = _context3.next) {
         case 0:
           _context3.next = 2;
-          return regeneratorRuntime.awrap(db('info as i').join('project as p', 'i.id', 'p.project_id').join('resource as r', 'p.project_id', 'r.resource_id').join('task as t', 'r.resource_id', 't.id').select('i.id', 'i.name', 'i.description', 'i.completed', 'p.project_id', 'p.name', 'p.description', 'p.completed', ' t.id', 't.description', 't.notes', 't.completed', 'r.resource_id', 'r.name', 'r.description'));
+          return regeneratorRuntime.awrap(db('info as i').join('project as p', 'i.id', 'p.id').join('resource as r', 'p.id', 'r.id').join('task as t', 'r.id', 't.id').select('i.id', 'i.name', 'i.description', 'i.completed', 'p.id', 'p.name', 'p.description', 'p.completed', ' t.id', 't.description', 't.notes', 't.completed', 'r.id', 'r.name', 'r.description'));
 
         case 2:
           info = _context3.sent;

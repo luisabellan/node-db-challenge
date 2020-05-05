@@ -1,0 +1,1 @@
+"use strict";exports.up=function(e){return e.schema.createTable("resource",function(e){e.increments(),e.string("name",30).unique().notNullable(),e.text("description")})},exports.down=function(e){return e.schema.dropTableIfExists("resource")};
